@@ -24,7 +24,7 @@ function normalizeSizes(item) {
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency , addToCart } = useContext(ShopContext);
 
   const [productData, setProductData] = useState(null);
   const [image, setImage] = useState('');
@@ -40,7 +40,7 @@ const Product = () => {
         setImage(imgs[0] || '');
 
         const sz = normalizeSizes(found);
-        setSize(sz[0] || '');
+        setSize('');
       } else {
         setProductData(null);
         setImage('');
@@ -114,7 +114,7 @@ const Product = () => {
               )}
             </div>
             <button
-            className='bg-black text-white py-3 px-8 text-sm active:bg-gray-700'
+             onClick={() => addToCart(productData._id, size)} className='bg-black text-white py-3 px-8 text-sm active:bg-gray-700'
             >ADD TO CART</button>
             <hr className='mt-8 sm:w-4/5'></hr>
             <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
