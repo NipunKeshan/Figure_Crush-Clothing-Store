@@ -43,7 +43,7 @@ const Navbar = () => {
   <div className='flex items-center gap-6 relative'>
     {/* Profile Icon + Dropdown */}
     <div className='relative group'>
-      <img src={assets.profile_icon} alt="user" className='w-5 cursor-pointer'/>
+      <Link to="/login"><img src={assets.profile_icon} alt="user" className='w-5 cursor-pointer'/></Link>
       <div className='absolute top-7 right-0 bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 transition-opacity'>
         <div className='flex flex-col gap-2 p-3 bg-slate-100 text-gray-500 rounded-md'>
             <p className='cursor-pointer hover:text-black'>My Profile</p>
